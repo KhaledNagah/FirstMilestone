@@ -1,0 +1,10 @@
+.\main.o: main.c
+.\main.o: Ports.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\main.o: tm4c123gh6pm.h
+.\main.o: Distance.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\main.o: UART.h
+.\main.o: ledon.h
+.\main.o: sevensegment.h
+.\main.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h

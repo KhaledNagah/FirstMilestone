@@ -1,0 +1,93 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+D:\Khaled\Semster 8\MicroController\leds\FirstMilestone\FirstMilestone.uvproj
+Project File Date:  06/06/2021
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling startup_TM4C123.s...
+compiling main.c...
+Ports.h(5): warning:  #1295-D: Deprecated declaration PortsInit - give arg types
+  void PortsInit();
+Ports.h(6): warning:  #1-D: last line of file ends without a newline
+  #endif
+UART.h(5): warning:  #1295-D: Deprecated declaration UARTInit - give arg types
+  void UARTInit();
+UART.h(6): warning:  #1295-D: Deprecated declaration UART1Recieve - give arg types
+  char UART1Recieve();
+UART.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+ledon.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+sevensegment.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(22): warning:  #1-D: last line of file ends without a newline
+        
+main.c: 8 warnings, 0 errors
+compiling Ports.c...
+Ports.h(5): warning:  #1295-D: Deprecated declaration PortsInit - give arg types
+  void PortsInit();
+Ports.h(6): warning:  #1-D: last line of file ends without a newline
+  #endif
+Ports.c(23): warning:  #1-D: last line of file ends without a newline
+                
+Ports.c: 3 warnings, 0 errors
+compiling UART.c...
+UART.h(5): warning:  #1295-D: Deprecated declaration UARTInit - give arg types
+  void UARTInit();
+UART.h(6): warning:  #1295-D: Deprecated declaration UART1Recieve - give arg types
+  char UART1Recieve();
+UART.h(7): warning:  #1-D: last line of file ends without a newline
+  #endif
+UART.c(39): warning:  #1-D: last line of file ends without a newline
+  }
+UART.c: 4 warnings, 0 errors
+compiling Distance.c...
+Distance.c(19): warning:  #1-D: last line of file ends without a newline
+  }
+Distance.c: 1 warning, 0 errors
+compiling ledon.c...
+ledon.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+ledon.c(9): warning:  #1-D: last line of file ends without a newline
+  }
+ledon.c: 2 warnings, 0 errors
+compiling sevensegment.c...
+sevensegment.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+Timer.h(7): warning:  #1295-D: Deprecated declaration SysTickInit - give arg types
+  void SysTickInit ();
+Timer.h(8): warning:  #1295-D: Deprecated declaration delay1ms - give arg types
+  void delay1ms();
+Timer.h(9): warning:  #1295-D: Deprecated declaration delayXms - give arg types
+  void delayXms();
+Timer.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+sevensegment.c(32): warning:  #111-D: statement is unreachable
+  return;
+sevensegment.c(6): warning:  #177-D: variable "temp" was declared but never referenced
+                int units, tens, hundreds,temp;
+sevensegment.c(7): warning:  #177-D: variable "counter" was declared but never referenced
+                double counter;
+sevensegment.c: 8 warnings, 0 errors
+compiling Timer.c...
+Timer.h(7): warning:  #1295-D: Deprecated declaration SysTickInit - give arg types
+  void SysTickInit ();
+Timer.h(8): warning:  #1295-D: Deprecated declaration delay1ms - give arg types
+  void delay1ms();
+Timer.h(9): warning:  #1295-D: Deprecated declaration delayXms - give arg types
+  void delayXms();
+Timer.h(10): warning:  #1-D: last line of file ends without a newline
+  #endif
+Timer.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=9276 RO-data=1084 RW-data=0 ZI-data=8608  
+".\leds.axf" - 0 Error(s), 30 Warning(s).
+Load "D:\\Khaled\\Semster 8\\MicroController\\leds\\FirstMilestone\\leds.axf" 
+Connecting: Mode=JTAG, Speed=1000000Hz
+Erase Done.
+Programming Done.
+Verify OK.
