@@ -18,3 +18,30 @@ void write_UART0(char data){
 	while((UART0_FR_R&UART_FR_TXFF) != 0);
 	UART0_DR_R = data;
 }
+
+
+
+// We will use UART7 for communicating with the gps module through E0 & E1
+void init_UART7(void)
+{	
+	SYSCTL_RCGCUART_R |= SYSCTL_RCGCUART_R7;
+	SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R4;
+	UART7_CTL_R &=~ 0x00000001;
+	UART7_IBRD_R = 104;
+	UART7_FBRD_R = 11;
+	UART7_LCRH_R=0x00000070;
+	UART7_CTL_R|= (UART_CTL_RXE | UART_CTL_TXE | UART_CTL_UARTEN);
+	GPIO_PORTE_AFSEL_R |= 0x03;
+	GPIO_PORTE_DEN_R |=0x03;
+	GPIO_PORTE_PCTL_R = (GPIO_PORTE_PCTL_R & 0xFFFFFF00) | (GPIO_PCTL_PE1_U7TX | GPIO_PCTL_PE0_U7RX);
+	GPIO_PORTE_AMSEL_R&=~0x03;
+}
+
+uint8_t available_UART7(void){
+	return ((UART7_FR_R&UART_FR_RXFE) == UART_FR_RXFE) ? 0 : 1;
+}
+
+uint8_t read_UART7(void){
+	while(available_UART7() != 1);
+	return (uint8_t)(UART7_DR_R&0xFF);
+}
