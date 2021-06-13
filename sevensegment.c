@@ -3,9 +3,11 @@
 
 void display (float distance)
 {
+		int x=100;
+	
 		int units, tens, hundreds,temp;
 		double counter;
-		while(1){
+		while(x){
 			float distance2;
 			distance2=distance;
 			units = (int)distance2 %10;
@@ -28,6 +30,8 @@ void display (float distance)
 
 			GPIO_PORTB_DATA_R = (	GPIO_PORTB_DATA_R &= 0x0f)  | (units);
 			delay1ms();
+			x--;
 		}
+		GPIO_PORTB_DATA_R|=0x07;
 return;
 }
