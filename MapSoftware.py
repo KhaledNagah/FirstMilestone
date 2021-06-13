@@ -8,23 +8,13 @@ import numpy as np
 import math as mt
 coordinates=""
 distance=0
-with open("longitude.txt", "r") as f:
-	lg= f.readlines()
-	f.close()
-with open("latitude.txt", "r") as f:
-	lt= f.readlines()
-	f.close()
-lg = [s.replace('\n','') for s in lg]
-lt = [s.replace('\n','') for s in lt]
-with open("test1.txt", "r") as f:
-	la= f.readlines()
-	f.close()
-la=[s.split(',') for s in la]
+#reading the cooridnates and putting it in a list
 with open("teraterm.log", "r") as f:
 	la= f.readlines()
 	f.close()
 la=[s.replace('\n','') for s in la]
 la=[s.split(',') for s in la]
+#calculating the distance
 for i in range(0,len(la)):
 	if i!=0:
 
@@ -39,7 +29,7 @@ for i in range(0,len(la)):
 		coordinates=coordinates+str(la[i][0])+","+str(la[i][1])+"|"
 	else:
 		coordinates=coordinates+str(la[i][0])+","+str(la[i][1])
-
+##the URL which communicate with googlemaps api
 BASE_URL = "https://maps.googleapis.com/maps/api/staticmap?"
 API_KEY = "AIzaSyC1fH3L4yEE1fpR3QyqOgDi-Ht2pxzrryU"
 
@@ -52,6 +42,8 @@ with open('map.png', 'wb') as file:
    # writing data into the file
    file.write(response.content)
 ...
+
+#adding the distance to the map
 distance=str(distance)
 img = Image.open("map.png").convert('RGB')
 draw=ImageDraw.Draw(img)
